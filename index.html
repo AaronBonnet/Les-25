@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Huiswerk</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        #verborgenBericht {
+            display: none;
+            color: green;
+        }
+
+        #roelofafbeelding {
+            display: none;
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welkom op mijn jQuery-pagina!</h1>
+    <button id="berichtknop">Toon Bericht</button>
+    <p id="verborgenBericht">Dit is een verborgen bericht!!!!</p>
+
+    <button id="afbeeldingknop">Toon/Verberg Afbeelding</button>
+    <img id="roelofafbeelding" src="afbeeldingen/roelof.jpg" alt="Een mooie afbeelding van Roelofarendsveen">
+
+    <script>
+        $(document).ready(function () {
+            $("#berichtknop").click(function () {
+                $("#verborgenBericht").toggle();
+            });
+
+            $("#verborgenBericht").hover(
+                function () {
+                    $(this).css('color', 'blue');
+                }, function () {
+                    $(this).css('color', 'green');
+                }
+            );
+            $("#afbeeldingknop").click(function () {
+                $("#roelofafbeelding").fadeToggle();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
